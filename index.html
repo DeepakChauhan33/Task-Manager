@@ -7,7 +7,7 @@
     <title>Webpage Title</title>
 
     <!-- TAILWIND CSS -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <!-- FONTAWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
@@ -16,24 +16,25 @@
 
 </head>
 
-<body>
+<body class="p-10">
 
-    <h1 class="text-center text-4xl ">Task Manager</h1>
-
+    <h1 class="text-center text-4xl font-bold ">Task Manager</h1>
 
     <section>
         <!-- Time Display -->
-         <div>
+        <div class="timeCant">
+            <span>20:20</span>
+        </div>
 
-         </div>
+        <div class="searchBox border py-6 px-3 flex justify-around">
+            <!-- Search Bar -->
+            <input class="w-[70%] px-4 py-4 border rounded-md " type="text" placeholder="Search">
 
-         <!-- Search Bar -->
-          <input type="text" name="" id="">
-
-          <!-- Multi Features -->
-           <div>
-            
-           </div>
+            <!-- Submit Button -->
+            <button class="searchBtn px-5 cursor-pointer border border-red-400 bg-red-400">
+                ADD TASK
+            </button>
+        </div>
     </section>
 
 
