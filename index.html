@@ -13,21 +13,22 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     />
-
   </head>
 
   <body>
-    <section class="bg-black rounded-b-[18px] shadow-b-lg  text-white pt-10 py-5 px-4">
+    <section
+      class="bg-black rounded-b-[18px] shadow-b-lg text-white pt-10 py-5 px-4"
+    >
       <!-- Time Display -->
       <div class="timeCant flex flex-col gap-y-3">
         <span class="text-xl"><strong>Wednesday, 21 January</strong></span>
         <p class="text-xl font-bold">20:32 PM</p>
       </div>
 
-      <div class="searchBox  p-0 py-4 flex justify-around items-center">
+      <div class="searchBox p-0 py-4 flex justify-around items-center">
         <!-- Search Bar -->
         <input
-          class="w-[70%] px-2 py-4 border outline-none focus:border-green-300  rounded-md"
+          class="w-[70%] px-2 py-4 border outline-none focus:border-green-300 rounded-md"
           type="text"
           placeholder="Add Task"
         />
@@ -41,32 +42,27 @@
       </div>
     </section>
 
-    
     <main class="p-4 bg-green-100">
-
       <section class="flex items-center mt-4">
-      <nav class=" w-full p-3 flex justify-center">
-        <ul class="flex justify-around items-center space-x-2">
-          <li class="bg-gray-300 px-3 py-[4px] rounded-2xl ">Completed</li>
-          <li class="bg-gray-300 px-3 py-[4px] rounded-2xl ">Pending</li>
-          <li class="bg-gray-300 px-3 py-[4px] rounded-2xl ">Important</li>
-        </ul>
-      </nav>
-    </section>
+        <nav class="w-full p-3 flex justify-center">
+          <ul class="flex justify-around items-center space-x-2">
+            <li class="bg-gray-300 px-3 py-[4px] rounded-2xl">Completed</li>
+            <li class="bg-gray-300 px-3 py-[4px] rounded-2xl">Pending</li>
+            <li class="bg-gray-300 px-3 py-[4px] rounded-2xl">Important</li>
+          </ul>
+        </nav>
+      </section>
 
-
-    <section>
-      <div class="min-h-120 border">
-        <ul class="cant">
-          
-        </ul>
-      </div>
-    </section>
-
+      <section>
+        <div class="min-h-120 border">
+          <ul class="cant"></ul>
+        </div>
+      </section>
     </main>
 
-
-
+    <footer>
+      <p>This application is created bt TechDeepak</p>
+    </footer>
 
     <!-- AXIOS API SCRIPT-->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
