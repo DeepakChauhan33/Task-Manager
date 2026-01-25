@@ -3,12 +3,16 @@ let timeVal = document.querySelector(".timeVal");
 const inputTask = document.querySelector('.inputTask');
 const addBtn = document.querySelector('.addBtn');
 const taskQueue = document.querySelector('.taskQueue');
+const taskTime = document.querySelector('.taskTime');
 
 
+
+let date = null;
+let time = null;
 
 
 // Shows current time and date 
-const timeDate = () => {
+const dateFunc = () => {
   let myDate = new Date();
   let customDate = myDate.toLocaleDateString("en-US", {
     weekday: "long",
@@ -16,13 +20,31 @@ const timeDate = () => {
     month: "long",
   });
 
-  const hours = String(myDate.getHours()).padStart(2, "0");
-  const minutes = String(myDate.getMinutes()).padStart(2, "0");
 
-  dayVal.innerText = customDate;
-  timeVal.innerText = `${hours}:${minutes}`;
+  return customDate;
 
 };
+
+
+const timeFunc = () => {
+
+  let myTime = new Date;
+
+  const hours = String(myTime.getHours()).padStart(2, "0");
+  const minutes = String(myTime.getMinutes()).padStart(2, "0");
+
+  return `${hours}:${minutes}`;
+
+}
+
+
+// Update current date and time in the application
+setInterval(() => {
+  dayVal.innerText = dateFunc();
+  timeVal.innerText = timeFunc();
+})
+
+
 
 
 addBtn.addEventListener('click', () => {
@@ -42,14 +64,27 @@ addBtn.addEventListener('click', () => {
 const addTask = (val) => {
   console.log("clicked");
   const task = document.createElement('li');
-  task.classList.add('border-1','p-2')
-  task.innerText = val;
+  task.innerHTML = `
+  <div class="border-1 px-1 py-2 flex justify-around items-center">
+              <div>
+                <p class=" text-md font-semibold text-gray-900">
+                  ${inputTask.value}
+                </p>
+                <span class="taskTime text-[11px] font-semibold text-gray-600"
+                  >${dateFunc()} at ${timeFunc()}</span
+                >
+              </div>
+
+              <div class="">
+                <input type="checkbox" class="border-1" />
+              </div>
+            </div>`;
+
   taskQueue.appendChild(task);
 }
 
 
 
-// Calling timeDate function at every mileseconds
-setInterval(timeDate, 100);
+
 
 
