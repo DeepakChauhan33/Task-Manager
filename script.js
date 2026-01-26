@@ -1,3 +1,6 @@
+const addTaskCant = document.querySelector('.addTaskCant');
+const addIconCant = document.querySelector('.addIconCant');
+const taskAddIcon = document.querySelector('.taskAddIcon');
 let dayVal = document.querySelector(".dayVal");
 let timeVal = document.querySelector(".timeVal");
 const inputTask = document.querySelector(".inputTask");
@@ -37,6 +40,15 @@ setInterval(() => {
   timeVal.innerText = timeFunc();
 });
 
+
+
+
+taskAddIcon.addEventListener('click', () => {
+  console.log("456123");
+  addTaskCant.classList.remove('hidden');
+  addIconCant.classList.add('hidden');
+})
+
 addBtn.addEventListener("click", () => {
   console.log("Click");
 
@@ -70,6 +82,9 @@ const addTask = (val) => {
 
   isEmpty = false;
   isEmptyFunction();
+
+  addTaskCant.classList.add('hidden');
+  addIconCant.classList.remove('hidden');
 
   taskQueue.appendChild(task);
 
