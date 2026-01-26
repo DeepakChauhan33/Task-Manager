@@ -1,17 +1,16 @@
 let dayVal = document.querySelector(".dayVal");
 let timeVal = document.querySelector(".timeVal");
-const inputTask = document.querySelector('.inputTask');
-const addBtn = document.querySelector('.addBtn');
-const taskQueue = document.querySelector('.taskQueue');
-const taskTime = document.querySelector('.taskTime');
-
-
+const inputTask = document.querySelector(".inputTask");
+const addBtn = document.querySelector(".addBtn");
+const taskQueue = document.querySelector(".taskQueue");
+const taskTime = document.querySelector(".taskTime");
+const QueueText = document.querySelector(".QueueText");
 
 let date = null;
 let time = null;
+let isEmpty = true;
 
-
-// Shows current time and date 
+// Shows current time and date
 const dateFunc = () => {
   let myDate = new Date();
   let customDate = myDate.toLocaleDateString("en-US", {
@@ -20,50 +19,39 @@ const dateFunc = () => {
     month: "long",
   });
 
-
   return customDate;
-
 };
 
-
 const timeFunc = () => {
-
-  let myTime = new Date;
+  let myTime = new Date();
 
   const hours = String(myTime.getHours()).padStart(2, "0");
   const minutes = String(myTime.getMinutes()).padStart(2, "0");
 
   return `${hours}:${minutes}`;
-
-}
-
+};
 
 // Update current date and time in the application
 setInterval(() => {
   dayVal.innerText = dateFunc();
   timeVal.innerText = timeFunc();
-})
+});
 
-
-
-
-addBtn.addEventListener('click', () => {
-  console.log('Click')
+addBtn.addEventListener("click", () => {
+  console.log("Click");
 
   if (inputTask.value.trim() === "") {
-    alert('Please Enter some task!!!')
+    alert("Please Enter some task!!!");
     inputTask.value = "";
   } else {
     addTask(inputTask.value.trim());
     inputTask.value = "";
   }
-
-})
-
+});
 
 const addTask = (val) => {
   console.log("clicked");
-  const task = document.createElement('li');
+  const task = document.createElement("li");
   task.innerHTML = `
   <div class="border-1 px-1 py-2 flex justify-around items-center">
               <div>
@@ -80,11 +68,21 @@ const addTask = (val) => {
               </div>
             </div>`;
 
+  isEmpty = false;
+  isEmptyFunction();
+
   taskQueue.appendChild(task);
+
+};
+
+function isEmptyFunction() {
+  if (isEmpty) {
+    QueueText.innerText = "Please add some Task :)";
+  } else {
+    QueueText.innerText = "";
+    QueueText.classList.add('hidden')
+  }
 }
 
 
-
-
-
-
+isEmptyFunction();

@@ -38,17 +38,18 @@
 
         <!-- Submit Button -->
         <button
-          class="addBtn h-12 px-3 rounded-xl text-[12px] cursor-pointer border border-red-400 bg-red-400"
+          class="addBtn h-12 px-3 rounded-xl text-[12px] cursor-pointer border border-red-400 bg-red-400 outline-none"
         >
           ADD TASK
         </button>
       </div>
     </section>
 
-    <main class="p-4">
+    <main class="px-3">
       <section class="flex items-center mt-3">
         <nav class="w-full p-3 flex justify-center">
-          <ul class="flex justify-around items-center space-x-2">
+          <ul class="flex justify-around text-sm items-center space-x-2">
+            <li class="bg-gray-400 px-3 py-[4px] rounded-2xl">All</li>
             <li class="bg-gray-400 px-3 py-[4px] rounded-2xl">Completed</li>
             <li class="bg-gray-400 px-3 py-[4px] rounded-2xl">Pending</li>
             <li class="bg-gray-400 px-3 py-[4px] rounded-2xl">Important</li>
@@ -57,8 +58,10 @@
       </section>
 
       <section>
-        <div class="min-h-120 border">
-          <ul class="taskQueue p-1 space-y-2">
+        <div class="h-auto ">
+          <ul class="taskQueue min-h-90 max-h-auto  p-1 space-y-2">
+
+            <p class="QueueText text-2xl font-bold text-center mt-19"> </p>
             <!-- Task comes Here -->
             <!-- <div class="border-1 p-2 flex justify-around items-center">
               <div>
@@ -79,7 +82,7 @@
       </section>
     </main>
 
-    <footer>
+    <footer class="w-full py-3 text-center border ">
       <p>This application is created bt TechDeepak</p>
     </footer>
 
