@@ -15,7 +15,7 @@
     />
   </head>
 
-  <body class="bg-gray-300">
+  <body class="bg-white">
     <section
       class="bg-black rounded-b-[18px] outline-none drop-shadow-lg text-white pt-8 py-5 px-4"
     >
@@ -31,7 +31,7 @@
       <div
         class="addTaskCant hidden flex flex-col py-3 mt-2 flex justify-around items-center"
       >
-        <div class="flex w-full border justify-around p-1">
+        <div class="flex w-full justify-around p-1">
           <!-- Search Bar -->
           <input
             class="inputTask w-[70%] py-3 px-2 border outline-none focus:border-green-300 rounded-md"
@@ -39,7 +39,11 @@
             placeholder="Add Task"
           />
 
-          <select name="" id="" class="border text-black bg-green-400">
+          <select
+            name=""
+            id=""
+            class="border rounded-md outline-none text-black bg-green-400"
+          >
             <option value="">Daily</option>
             <option value="">Work</option>
             <option value="">Education</option>
@@ -62,7 +66,7 @@
     </section>
 
     <main class="px-3">
-      <section class="flex items-center mt-3">
+      <section class="flex items-center my-3">
         <nav class="w-full p-3 flex justify-center">
           <ul class="flex justify-around text-sm items-center space-x-2">
             <li class="bg-gray-400 px-3 py-[4px] rounded-2xl">All</li>
@@ -75,23 +79,45 @@
 
       <section>
         <div class="h-auto">
-          <ul class="taskQueue min-h-90 max-h-auto p-1 space-y-2">
+          <ul class="taskQueue min-h-90 max-h-auto p-1 space-y-3 py-4">
             <p class="QueueText text-2xl font-bold text-center mt-19"></p>
             <!-- Task comes Here -->
-            <!-- <div class="border-1 p-2 flex justify-around items-center">
-              <div>
-                <p class="border text-md font-semibold text-gray-900">
-                  Careers advice appointement books
-                </p>
-                <span class="taskTime text-[11px] font-semibold text-gray-600"
-                  >20:23 at 20 Jan</span
-                >
+            <div
+              class="shadow-xl border-1 relative border-gray-300 px-3 py-3 flex flex-col gap-y- "
+            >
+              <div class="flex items-center">
+                <div class="">
+                  <input type="checkbox" class="border-1" />
+                </div>
+
+                <div class="w-full">
+                  <p class="text-md font-normal bg-gray-100 p-2 text-gray-900">
+                    ${inputTask.value}
+                  </p>
+                  
+                </div>
               </div>
 
-              <div class="">
-                <input type="checkbox" class="border-1" />
+              <div class="flex items-center justify-between">
+                <span class="taskTime text-[11px] font-semibold text-gray-600"
+                  >${dateFunc()} at ${timeFunc()}</span
+                >
+
+                <ul class="flex items-center">
+                  <li>
+                    <i
+                      class="fa-solid fa-trash text-xl font-light text-red-300"
+                    ></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-regular fa-keyboard"></i>
+                  </li>
+                </ul>
               </div>
-            </div> -->
+
+            
+            </div>
           </ul>
         </div>
       </section>
@@ -107,3 +133,24 @@
     <script src="script.js"></script>
   </body>
 </html>
+
+<div class="m-3 border p-3">
+  <div class="flex">
+    <input type="checkbox" />
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, vero!</p>
+  </div>
+
+  <div class="flex items-center justify-between">
+    <p>sdbbs njsnjkf 425</p>
+
+    <ul class="flex items-center">
+      <li>
+        <i class="fa-solid fa-trash text-xl font-light text-red-300"></i>
+      </li>
+
+      <li>
+        <i class="fa-regular fa-keyboard"></i>
+      </li>
+    </ul>
+  </div>
+</div>
