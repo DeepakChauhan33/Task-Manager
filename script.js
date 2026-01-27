@@ -65,32 +65,45 @@ const addTask = (val) => {
   console.log("clicked");
   const task = document.createElement("li");
   task.innerHTML = `
-  <div
-              class="shadow-xl border-1 relative border-gray-300 px-3 py-3 flex items-center justify-around"
-            >
-              <div class="">
-                <input type="checkbox" class="border-1" />
+  
+          <div class="shadow-xl rounded-sm border-1 relative border-gray-300 px-3 py-2 flex flex-col gap-y-2">
+
+              <!-- Checkbox & Task Div -->
+              <div class="flex items-start items-center gap-x-3 ">
+                <!-- Checkbox -->
+                <div class="mt-1">
+                  <input type="checkbox" class="border-1 h-4 w-4" />
+                </div>
+
+                <!-- Task -->
+                <div class="w-full">
+                  <p class="text-md font-normal bg-gray-100 p-2 rounded-sm text-gray-900">
+                    ${inputTask.value}
+                  </p>
+                </div>
               </div>
 
-              <div class="w-[80%] ">
-                <p class="text-md font-semibold bg-gray-100 p-2 text-gray-900">
-                  ${inputTask.value}
-                </p>
-                <span class="taskTime text-[11px] font-semibold text-gray-600"
-                  >${dateFunc()} at ${timeFunc()}</span
-                >
+              <!-- Date, Delete & Edit  -->
+              <div class="flex items-center justify-between">
+                <!-- Store Date -->
+                <span class="taskTime text-[11px] font-semibold text-gray-600">
+                  ${dateFunc()} at ${timeFunc()}
+                </span>
+
+                <!-- Delete & Edit Icon -->
+                <ul class="flex items-center gap-x-2">
+                  <li>
+                    <i class="fa-solid fa-trash text-xl font-light text-red-300 hover:text-red-500 cursor-pointer"></i>
+                  </li>
+
+                  <li>
+                    <i class="fa-regular fa-keyboard cursor-pointer"></i>
+                  </li>
+                </ul>
               </div>
-
-              <div class="w-[10%] p-1 flex flex-col items-center justify-around ">
-                <li class=" ">
-                  <i
-                    class="fa-solid fa-trash text-xl font-light text-red-600"></i>
-                </li>
-
-                <li>
-                  <i class="fa-regular fa-keyboard"></i>
-                </li>
-              </div>`;
+            </div>
+  
+  `
 
   isEmpty = false;
   isEmptyFunction();
