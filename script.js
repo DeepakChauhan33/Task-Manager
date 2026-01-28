@@ -55,18 +55,23 @@ addBtn.addEventListener("click", () => {
   if (inputTask.value.trim() === "") {
     alert("Please Enter some task!!!");
     inputTask.value = "";
+    addTaskCant.classList.add('hidden');
+    addIconCant.classList.remove('hidden');
   } else {
     addTask(inputTask.value.trim());
     inputTask.value = "";
   }
 });
 
-const addTask = (val) => {
+
+
+
+const addTask = () => {
   console.log("clicked");
   const task = document.createElement("li");
   task.innerHTML = `
   
-          <div class="shadow-xl rounded-sm border-1 relative border-gray-300 px-3 py-2 flex flex-col gap-y-2">
+          <div class=" shadow-xl rounded-sm border-1 relative border-gray-300 px-3 py-2 flex flex-col gap-y-2">
 
               <!-- Checkbox & Task Div -->
               <div class="flex items-start items-center gap-x-3 ">
@@ -92,12 +97,12 @@ const addTask = (val) => {
 
                 <!-- Delete & Edit Icon -->
                 <ul class="flex items-center gap-x-2">
-                  <li>
-                    <i class="fa-solid fa-trash text-xl font-light text-red-300 hover:text-red-500 cursor-pointer"></i>
+                  <li title="Delete task">
+                    <i class="fa-solid fa-trash text-xl font-light text-red-400 hover:text-red-500 cursor-pointer"></i>
                   </li>
 
-                  <li>
-                    <i class="fa-regular fa-keyboard cursor-pointer"></i>
+                  <li title="Edit task" class="editBtn">
+                    <i class=" fa-regular fa-keyboard cursor-pointer text-green-500"></i>
                   </li>
                 </ul>
               </div>
@@ -105,15 +110,33 @@ const addTask = (val) => {
   
   `
 
+
+
+
   isEmpty = false;
   isEmptyFunction();
+
+
 
   addTaskCant.classList.add('hidden');
   addIconCant.classList.remove('hidden');
 
   taskQueue.appendChild(task);
 
+
+  // Enent Deligation 
+  task.addEventListener('click', function (e) {
+    const val = e.target.closest(".editBtn");
+  if (!val ) return "Dpk";
+  console.log(val+"Deepak");
+  })
+
+
 };
+
+
+
+
 
 function isEmptyFunction() {
   if (isEmpty) {
@@ -123,6 +146,8 @@ function isEmptyFunction() {
     QueueText.classList.add('hidden')
   }
 }
+
+
 
 
 isEmptyFunction();
