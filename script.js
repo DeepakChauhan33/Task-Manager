@@ -127,12 +127,14 @@ const addTask = () => {
   // Enent Deligation 
   task.addEventListener('click', function (e) {
     const val = e.target.closest(".editBtn");
-  if (!val ) return "Dpk";
-  console.log(val+"Deepak");
+    if (!val) return;
+
+
   })
 
 
 };
+
 
 
 
