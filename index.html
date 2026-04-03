@@ -15,34 +15,35 @@
     />
   </head>
 
-  <body class="bg-white ">
+  <body class="bg-linear-to-b from-[#ECF0F3] to-[#FFFFFF]  ">
     <!-- HEADER -->
 
-    <header class=" space-y-5 p-2 pb-3 border  bg-purple-300">
+    <header class=" space-y-5  pb-3   ">
       <!--Screen top heading -->
-      <div class="">
+      <div class="bg-gray-300/60 shadow-b-xl p-2 ">
         <!-- Calendar Icon and Text -->
         <div>
           <i class="fa-regular fa-calendar"></i>
-          <span class="text-md font-black">Today's Schedule</span>
+          <span class="text-md font-bold">Today's Schedule</span>
         </div>
       </div>
 
-      <div class="flex items-center justify-between">
-        <!-- Date Div -->
+      <!-- Date and Add Btn -->
+      <div class=" flex items-center justify-between p-2">
+        <!-- Date -->
 
         <div>
           <span class="font-black text-4xl">Friday</span>
           <p class="text-2xl font-bold">01, April</p>
         </div>
 
-        <!-- Add task div -->
-        <div class="border text-center mr-5  p-3 rounded-md">
+        <!-- Add task Btn -->
+        <div class="addBtn border text-center mr-5  p-3 rounded-md">
           <i class="fa-solid fa-plus text-2xl font-black"></i>
         </div>
       </div>
 
-      <div class="space-y-3">
+      <div class="inputTaskBox hidden space-y-3 p-2">
         <div class="flex items-center p-1 space-x-3">
         <input type="text" placeholder="What's the next big thing" class="w-full h-15 rounded-4xl p-3 bg-gray-200/60 border-2 border-transparent focus:bg-white focus:border-blue-500" />
         <select name="" id="" class="Category  bg-blue-200 py-2 px-1">
@@ -59,14 +60,14 @@
       </div>
     </header>
 
-    <main class="border min-h-80">
+    <main class="p-2.5  min-h-80">
 
-      <section>
-
+      <section class="border">
+          <p>You have 3 task</p>
       </section>
-      <section>
 
-      </section>
+
+    
     </main>
 
     <footer></footer>
