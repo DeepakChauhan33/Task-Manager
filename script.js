@@ -102,19 +102,17 @@ function renderTask(taskArray) {
             <span class="text-sm pl-4 font-black text-gray-500/90">${task.date}</span>
             <div>
               <button title="edit"
-                class="hover:bg-gray-200 text-gray-500/90 border-0 rounded-md p-1 transition-transform hover:scale-108 duration-100 ease-in-out hover:text-black ">
+                class="hover:editBtn bg-gray-200 text-gray-500/90 border-0 rounded-md p-1 transition-transform hover:scale-108 duration-100 ease-in-out hover:text-black ">
                 <i class="fa-solid fa-pen  "></i>
               </button>
 
               <button title="delete"
-                class="hover:bg-gray-200 text-gray-500/90 border-0 rounded-md p-1 transition-transform hover:scale-108 duration-100 ease-in-out hover:text-red-500/80">
+                class="deleteBtn hover:bg-gray-200 text-gray-500/90 border-0 rounded-md p-1 transition-transform hover:scale-108 duration-100 ease-in-out hover:text-red-500/80">
                 <i class="fa-solid fa-trash"></i>
               </button>
             </div>
           </div>
         </div>
-
-
 
         `
 
@@ -125,6 +123,8 @@ function renderTask(taskArray) {
             opacity: 0,
             duration: 0.3
         });
+
+
     })
 }
 
@@ -148,6 +148,25 @@ filterSection.addEventListener('click', function (e) {
 
 
 
+taskCant.addEventListener('click', (e) => {
+
+    const deleteBtn = e.target.closest('.deleteBtn');
+
+    if (!deleteBtn) return;
+
+    const id = Number(deleteBtn.dataset.id);
+
+    deleteTask(id);
+
+})
+
+
+function deleteTask(id) {
+
+    const updtTask = taskArray.filter(task => task.id !== id);
+
+    renderTask(updtTask);
+}
 
 
 
@@ -157,7 +176,6 @@ filterSection.addEventListener("click", (e) => {
 
     if (!btn.classList.contains("filterBtn")) return;
 
-    const filterValue = btn.dataset.filter;
 
     const allButtons = filterSection.querySelectorAll(".filterBtn");
     allButtons.forEach(b => b.classList.remove("bg-gray-6  00", "text-white"));
