@@ -2,6 +2,13 @@
 const taskArray = [];
 
 
+
+const weekDay = document.getElementById('weekDay');
+const day = document.getElementById('day');
+const month = document.getElementById('month');
+
+
+
 const addBtn = document.querySelector('.addBtn');
 const inputTaskBox = document.querySelector('.inputTaskBox');
 const inputTask = document.querySelector('.inputTask');
@@ -13,7 +20,25 @@ const filterSection = document.querySelector('#filterSection');
 
 
 
-// let editTaskId = null;
+function updateTime() {
+    const now = new Date();
+
+
+    let week = now.toLocaleDateString([], { weekday: "long" });
+    weekDay.innerText = week;
+
+    let tarik = now.toLocaleDateString([], { day: "2-digit" });
+    day.innerText = tarik;
+
+    let mnth = now.toLocaleDateString([], { month: "short" });
+    month.innerText = mnth;
+
+}
+
+
+setInterval
+
+
 
 
 
@@ -68,7 +93,13 @@ function addTask(inputTask, category) {
             task: inputTask.value,
             category: category.value,
             completed: false,
-            date: new Date().toLocaleString(),
+            date: new Date().toLocaleString([], {
+                day: '2-digit',
+                month: 'short',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            })
         };
 
         taskArray.push(taskObj);
@@ -241,12 +272,5 @@ filterSection.addEventListener("click", (e) => {
 
 toggleFilterSection();
 
-
-
-
-
-
-
-
-
-
+updateTime();
+setInterval(updateTime, 1000);

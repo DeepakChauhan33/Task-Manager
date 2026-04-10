@@ -21,12 +21,13 @@
 
   <header class=" space-y-3  pb-3  ">
     <!--Screen top heading -->
-    <div class="bg-gray-300/60 shadow-b-xl p-2 ">
+    <div class="bg-gray-300/60 shadow-b-xl p-2">
       <!-- Calendar Icon and Text -->
       <div>
         <i class="fa-regular fa-calendar"></i>
         <span class="text-md font-bold">Today's Schedule</span>
       </div>
+
     </div>
 
     <!-- Date and Add Btn -->
@@ -34,8 +35,11 @@
       <!-- Date -->
 
       <div>
-        <span class="font-black text-4xl">Friday</span>
-        <p class="text-2xl font-bold">01, April</p>
+        <span id="weekDay" class="font-black text-4xl">week</span>
+        <div class="text-2xl font-bold">
+          <span id="day">day</span>
+          <span id="month">month</span>
+        </div>
       </div>
 
       <!-- Add task Btn -->
@@ -66,15 +70,18 @@
   </header>
 
 
-  <main class="p-2.5  min-h-80 flex ">
+  <main class="p-2.5 flex ">
 
 
-    <section class="hidden lg:flex w-full lg:w-1/2 border">
+    <section class="hidden lg:flex w-full lg:w-1/2 ">
       456
     </section>
 
 
-    <section class="w-full lg:w-[60%] p-1 border">
+    <section class="w-full lg:w-[60%] p-1 ">
+
+
+      <!-- FILTER BUTTON -->
       <div class=" flex flex-wrap gap-2 mb-4" id="filterSection">
 
         <button class="filterBtn px-3 py-1 border rounded bg-gray-100" data-filter="all">
@@ -95,11 +102,18 @@
 
       </div>
 
-      <div>
+      <!-- TASK CONTAINER -->
+      <div class="min-h-[75vh]  ">
         <ul class="taskCant space-y-4 ">
           <p class="text-center ">No task here!</p>
 
 
+          <!-- Tasks -->
+          <!-- 
+            1
+            2
+            3
+             -->
         </ul>
 
 
