@@ -258,9 +258,9 @@ filterSection.addEventListener("click", (e) => {
     if (!btn) return;
 
     const allButtons = filterSection.querySelectorAll(".filterBtn");
-    allButtons.forEach(b => b.classList.remove("bg-gray-600", "text-white"));
+    allButtons.forEach(b => b.classList.remove("bg-blue-500", "text-white"));
 
-    btn.classList.add("bg-gray-600", "text-white");
+    btn.classList.add("bg-blue-500", "text-white");
 
 });
 
